@@ -1102,7 +1102,7 @@ button.btn_down::after{content:url(../img/comm/ico_download_b.png);position:rela
 .main .replay2.dolbal .ico{background:url(../img/comm/sprite_comm_202011v5.png) -318px -33px;width:79px}
 .main .replay2.dolbal .hlink .ico::after{left:84px}
 .main .replay2 .thumbwrap,.main .replay2 li{width:264px;font-weight:700;font-size:0}
-.main .replay2 li{display:inline-block;vertical-align:top;padding-right:12px}
+.main .replay2 li{display:inline-block;vertical-align:top;padding-right:14px}
 .main .replay2 li:last-child{padding:0}
 .main .replay2 .cate{display:block;font-size:13px;color:#1c9de9;padding:4px 0}
 .main .replay2 .til{display:block;max-height:40px;overflow:hidden;text-overflow:ellipsis;max-height:2.8em;line-height:1.4em;display:block;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;word-wrap:break-word;color:#333;font-weight:500;font-size:16px}
@@ -1738,7 +1738,7 @@ table{border-collapse:collapse}
 .etc_page .audience .infowrap .desc{font-size:14px;color:#666}
 /* css 옮김 21-10-27 */
 .main .vod_list_top .top_li2 li.YTN_CSA_topnews2{margin-right:0}
-.main .vod_list_top .top_li2 li.YTN_CSA_topnews3{margin-right:12px}
+.main .vod_list_top .top_li2 li.YTN_CSA_topnews3{margin-right:20px}
 .main .vod_list_top .top_li1:hover .til a, .now01 li:hover span a, .now02 li:hover span a, .top li:hover span a, .replay2 li:hover .til a, .recommslide div:hover a{text-decoration:underline}
 .main .now02 ul:nth-child(3){padding-right:6px}
 #opinion{clear:both;width:740px;padding-top:20px;margin:0}
