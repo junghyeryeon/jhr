@@ -5,12 +5,12 @@
 .header_wrap{padding:0;height:51px;border:none}
 .gnb_header{position:relative;padding:2px}
 .gnb_logo{float:left;position:absolute;margin:0 auto;margin-left:-80px;top:13px;left:84px;margin-left:0}
-.gnb_logo .ico{display:inline-block;width:70px;height:22px;background:url(../img/comm/sprite_comm_202011v5.png) 0px 0px;vertical-align:top}
+.gnb_logo .ico{display:inline-block;width:70px;height:22px;background:url(img/comm/sprite_comm_202011v5.png) 0px 0px;vertical-align:top}
 .gnb_logo a{display:block;height:22px}
-.btn_menu{float:left;width:44px;height:44px;background:url(../img/comm/sprite_comm_202011v5.png) -88px -32px;top:1px;position:relative}
+.btn_menu{float:left;width:44px;height:44px;background:url(img/comm/sprite_comm_202011v5.png) -88px -32px;top:1px;position:relative}
 .gnb_login{float:right;top:1px}
-.btn_login{width:44px;height:44px;background:url(../img/comm/sprite_comm_202011v5.png) -44px -32px}
-.btn_search{width:44px;height:44px;margin-left:12px;background:url(../img/comm/sprite_comm_202011v5.png) 0px -32px}
+.btn_login{width:44px;height:44px;background:url(img/comm/sprite_comm_202011v5.png) -44px -32px}
+.btn_search{width:44px;height:44px;margin-left:12px;background:url(img/comm/sprite_comm_202011v5.png) 0px -32px}
 .box_login{position:absolute;top:50px;right:0;width:95px;margin-right:34px;background:#333;color:#fff;z-index:10}
 .box_login a{display:block;padding:8px;font-size:13px;font-weight:700}
 .box_login:after{position:absolute;width:0;height:0;top:-22px;left:50%;border-width:15px 10px;border-style:solid;border-color:transparent transparent #333;margin-left:-10px;content:''}
@@ -18,7 +18,7 @@
 .box_search input{display:inline-block;margin-left:250px;width:600px;height:30px;font-size:16px;color:#fff;padding:10px;position:relative;top:0;left:0}
 .box_search input::placeholder{color:#fff;font-size:15px;font-weight:700}
 .box_search .menu_close{position:absolute;top:-47px;right:0;background-color:#fff}
-.box_search .btn_search{float:right;background:url(../img/comm/sprite_comm_202011v5.png) 0px -76px}
+.box_search .btn_search{float:right;background:url(img/comm/sprite_comm_202011v5.png) 0px -76px}
 .gnb_menu{border-top:1px solid #F2F2F2;position:relative;border:none;margin:0 auto}
 .gnb_menu >div{width:650px}
 .gnb_menu ul{position:relative;height:48px;width:650px;margin:0 auto}
@@ -36,17 +36,17 @@
 .scroll .react{float:left;width:auto;position:relative;top:0;right:0}
 .scroll .react button{opacity:.3;transition:opacity ease 0.2s;}
 .scroll .react button:hover{opacity:1}
-.btn_comment{width:44px;height:44px;background:url(../img/comm/sprite_comm_202011v5.png) -176px -32px}
-.btn_share{width:44px;height:44px;background:url(../img/comm/sprite_comm_202011v5.png) -176px -76px}
+.btn_comment{width:44px;height:44px;background:url(img/comm/sprite_comm_202011v5.png) -176px -32px}
+.btn_share{width:44px;height:44px;background:url(img/comm/sprite_comm_202011v5.png) -176px -76px}
 .scroll .right_menu{float:right}
 .scroll .right_menu .live{position:relative;top:5px;color:#ff6d6a;font-size:15px;font-weight:700;padding-right:12px}
 .scroll .right_menu .live a{text-decoration:none}
 .scroll .right_menu .news{position:relative;top:6px;border:2px solid #333;border-radius:21px;padding:6px 10px 6px 34px;font-size:14px;font-weight:700;background-color:#333;color:#fff;letter-spacing:-.04em}
 .scroll .right_menu .news span{display:block;top:-2px}
-.scroll .right_menu .news span::before{position:absolute;top:4px;left:8px;content:'';width:21px;height:22px;background:url(../img/comm/sprite_comm_202011v5.png) -11px -130px}
-.scroll .right_menu .news.new span::before{background:url(../img/comm/sprite_comm_202011v5.png) -112px -130px}
+.scroll .right_menu .news span::before{position:absolute;top:4px;left:8px;content:'';width:21px;height:22px;background:url(img/comm/sprite_comm_202011v5.png) -11px -130px}
+.scroll .right_menu .news.new span::before{background:url(img/comm/sprite_comm_202011v5.png) -112px -130px}
 .scroll .right_menu .news.on{background-color:#fff;color:#333}
-.scroll .right_menu .news.on span::before{background:url(../img/comm/sprite_comm_202011v5.png) -154px -130px}
+.scroll .right_menu .news.on span::before{background:url(img/comm/sprite_comm_202011v5.png) -154px -130px}
 /* 공유하기 박스 */
 .box_share{float:right;position:relative;top:2px;width:280px;background-color:#fff;border:1px solid #F2F2F2;z-index:10}
 .header_wrap .gnb_header .box_share .til,.box_share .til{display:inline-block;padding:12px;font-size:15px;font-weight:700}
