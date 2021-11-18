@@ -1,0 +1,1110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<title>YTN</title>
+<link rel="shortcut icon" href="https://ytn.co.kr/img/comm/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://ytn.co.kr/img/comm/favicon.ico" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name='title' content='YTN'/>
+<meta name='description' content='대한민국 24시간 뉴스 방송채널, 실시간 속보 및 제보하기, 분야별 뉴스, 방송 프로그램 다시보기'/>
+<meta name='keywords' content='YTN, 뉴스채널, 와이티엔, www.ytn.co.kr, ytn.co.kr, 속보, 생방송, 제보, 뉴스, 실시간 뉴스, 대한민국, TV'/>
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="../js/jquery.lazyloadxt.min.js"></script>
+<script type="text/javascript" src="../js/ytn.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    //스크롤시 GNB처리
+	$(window).on("scroll mousewheel DOMMouseScroll", function(e) {
+		$(window).scroll( function() {
+			if($(window).scrollTop() >= 20) {	//스크롤이동
+				$(".header").addClass("scroll");
+			}else {
+				$(".header").removeClass("scroll");
+			}
+		});
+	});
+	//smallgnb
+});
+//햄버거 > 메뉴클릭
+function hamMenuChange(n){
+	for(i=1; i<=$(".list > li").length; i++){
+		$("#list_"+i).removeClass("on");
+		$("#left_menu_"+i).hide();
+	}
+	if(n){
+		$("#list_"+n).addClass("on");
+		$("#left_menu_"+n).show();
+		$(".mid").hide();	//라이브
+		$(".right").hide();	//실시간 인기
+	}else{
+		$(".mid").show();	//라이브
+		$(".right").show();	//실시간 인기
+	}
+}
+</script>
+</head>
+<body>
+<div class="container">
+	<div class="header">
+		<div class="header_wrap">
+			<div class="gnb_header wrapper">
+				<div class="YTN_CSA_hammenu">
+					<a class="btn_menu" href="javascript:void(0);" onclick="$('#hammenu, #menu_black').show();"><span class="blind">메뉴</span></a>
+				</div>
+				<!---------------------- 햄버거 메뉴 : 공통 ---------------------->
+				<div class="menu" id="hammenu" style="display:none;">
+					<div class="menu_top">
+						<div><span class="ico"></span><span class="blind">YTN</span></div>
+						<button class="menu_close" onclick="$('#hammenu, #menu_black').hide(); hamMenuChange();"><span class="blind">메뉴 닫기</span></button>
+						<ul style="left:0;float:right">
+							<li><a href="">HOME</a></li>
+							<li><a href="">뉴스알림</a></li>
+							<li><a href="">라이브</a></li>
+							<li><a href="">편성표</a></li>
+							<li><a href="">제보</a></li>
+							<li><a id="loginChk3" >로그인&#183;회원가입</a></li>
+						</ul>
+					</div>
+					<div class="menu_inside">
+						<div class="left">
+							<form name="web_search" target="_top" action="" method="get" onsubmit="searchChk('web_search');">
+							<div class="search">
+								<input name="q" type="text" title="검색어 입력" placeholder="검색어를 입력해주세요" class="placeholder ui-autocomplete-input" autocomplete="off">
+								<button class="btn_search"><span class="blind">검색하기</span></button>
+							</div>
+							</form>
+							<ul class="list">
+								<li id="list_1" onclick="hamMenuChange(1);"><a href="javascript:void(0);">분야별뉴스</a></li>
+								<li id="list_2" onclick="hamMenuChange(2);"><a href="javascript:void(0);">와플뉴스</a></li>
+								<li id="list_3" onclick="hamMenuChange(3);"><a href="javascript:void(0);">YTN star</a></li>
+								<li id="list_4" onclick="hamMenuChange(4);"><a href="javascript:void(0);">다시보기</a></li>
+								<li id="list_5" onclick="hamMenuChange(5);"><a href="javascript:void(0);">제보</a></li>
+								<li id="list_6" onclick="hamMenuChange(6);"><a href="javascript:void(0);">시청자센터</a></li>
+								<li id="list_7" onclick="hamMenuChange(7);"><a href="javascript:void(0);">알립니다</a></li>
+								<li id="list_8" onclick="hamMenuChange(8);"><a href="javascript:void(0);">특집 프로젝트</a></li>
+								<li id="list_9" onclick="hamMenuChange(9);"><a href="javascript:void(0);">광고&#183;비즈니스</a></li>
+								<li id="list_10" onclick="hamMenuChange(10);"><a href="javascript:void(0);">디지털 서비스</a></li>
+							</ul>
+						</div>
+						<div id="left_menu_1" class="left_menu" style="display:none;">
+						    <h3>분야별뉴스</h3>
+						    <ul>
+						        <li><a href="">분야별 뉴스 메인</a></li>
+						        <li><a href="">최신뉴스</a></li>
+						        <li><a href="">많이 본 뉴스</a></li>
+						        <li><a href="">속보·알림</a></li>
+						        <li><a href="">단독</a></li>
+						        <li><a href="">정치</a></li>
+						        <li><a href="">경제</a></li>
+						        <li><a href="">사회</a></li>
+						        <li><a href="">전국</a></li>
+						        <li><a href="">국제</a></li>
+						        <li><a href="">과학</a></li>
+						        <li><a href="">문화</a></li>
+						        <li><a href="">스포츠</a></li>
+						        <li><a href="">데이터저널리즘</a></li>
+						        <li><a href="">날씨</a></li>
+						        <li><a href="">재난</a></li>
+						        <li><a href="">정보광장</a></li>
+						    </ul>
+						</div>
+						<div id="left_menu_2" class="left_menu" style="display:none;">
+						    <h3>와플뉴스</h3>
+						    <ul>
+						        <li><a href="">와플뉴스 메인</a></li>
+						        <li><a href="">모두다</a></li>
+						        <li><a href="">자막뉴스</a></li>
+						        <li><a href="">최신뉴스</a></li>
+						        <li><a href="">별책부록</a></li>
+						        <li><a href="">저기요맨</a></li>
+						        <li><a href="">SNS세상</a></li>
+						        <li><a href="">시사캐리커쳐</a></li>
+						        <li><a href="">제보영상</a></li>
+						        <li><a href="">개미일기</a></li>
+						        <li><a href="">제보 이거 실화냐</a></li>
+						        <li><a href="">와이즈맨</a></li>
+						        <li><a href="">구루마블</a></li>
+						        <li><a href="">와이파일</a></li>
+						        <li><a href="">포스트잇</a></li>
+						        <li><a href="">운세</a></li>
+						        <li><a href="">플러스다큐</a></li>
+						        <li><a href="">동반자</a></li>
+						        <li><a href="">인스턴트 비디오</a></li>
+						        <li><a href="">한손뉴스</a></li>
+						    </ul>
+						</div>
+						<div id="left_menu_3" class="left_menu" style="display:none;">
+						    <h3>YTN star</h3>
+						    <ul>
+						        <li><a href="">YTN star 메인</a></li>
+						        <li><a href="">최신뉴스</a></li>
+						        <li><a href="">방송</a></li>
+						        <li><a href="">가요</a></li>
+						        <li><a href="">영화</a></li>
+						        <li><a href="">Y이슈</a></li>
+						        <li><a href="">해외연예</a></li>
+						        <li><a href="">웹툰뉴스</a></li>
+						        <li><a href="">반말인터뷰</a></li>
+						    </ul>
+						</div>
+						<div id="left_menu_4" class="left_menu" style="display:none;">
+						    <h3>다시보기</h3>
+						    <ul>
+						        <li><a href="">다시보기 메인</a></li>
+						        <li><a href="">지금 막 올라온</a></li>
+						        <li><a href="">많이 보는</a></li>
+						        <li><a href="">시사</a></li>
+						        <li><a href="">다큐</a></li>
+						        <li><a href="">과학</a></li>
+						        <li><a href="">교양</a></li>
+						    </ul>
+						    <h3>채널 별</h3>
+						    <ul>
+						        <li><a href="">YTN</a></li>
+						        <li><a href="">와플뉴스</a></li>
+						        <li><a href="">YTN 스타</a></li>
+						        <li><a href="">YTN 월드</a></li>
+						        <li><a href="">YTN 코리안</a></li>
+						        <li><a href="">YTN 사이언스</a></li>
+						        <li><a href="">YTN2</a></li>
+						        <li><a href="">YTN 라디오</a></li>
+						        <li><a href="">YTN DMB</a></li>
+						    </ul>
+						</div>
+						<div id="left_menu_5" class="left_menu" style="display:none;">
+						    <h3>제보</h3>
+						    <ul>
+						        <li><a href="">제보 메인</a></li>
+						        <li><a href="">제보하기</a></li>
+						        <li><a href="">제보랭킹</a></li>
+						        <li><a href="">최신제보</a></li>
+						    </ul>
+						</div>
+						<div id="left_menu_6" class="left_menu" style="display:none;">
+						    <h3>시청자센터</h3>
+						    <ul>
+						        <li><a href="">시청자의견</a></li>
+						        <li><a href="">시민데스크</a></li>
+						        <li><a href="">시청자브리핑 시시콜콜</a></li>
+						        <li><a href="">시청자 위원회</a></li>
+						        <li><a href="">고충처리위원회</a></li>
+						        <li><a href="">사이버감사실</a></li>
+						        <li><a href="">견학신청</a></li>
+						        <li><a href="">성폭력 신고센터</a></li>
+						    </ul>
+						</div>
+						<div id="left_menu_7" class="left_menu" style="display:none;">
+						    <h3>알립니다</h3>
+						    <ul>
+						        <li><a href="">공지사항</a></li>
+						        <li><a href="">채용공고</a></li>
+						        <li><a href="">경품이벤트</a></li>
+						        <li><a href="">채널 안내</a></li>
+						        <li><a href="">위치 및 연락처</a></li>
+						        <li><a href="">이용 도움말</a></li>
+						    </ul>
+						</div>
+						<div id="left_menu_8" class="left_menu" style="display:none;">
+						    <h3>특집 프로젝트</h3>
+						    <ul>
+						        <li><a target="" href="">리스펙트 프로젝트</a></li>
+						        <li><a target="" href="">SMILE TO VOTE</a></li>
+						        <li><a target="" href="">뉴미디어 리터러시</a></li>
+						        <li><a target="" href="">2020 국회의원선거</a></li>
+						        <li><a target="" href="">2021 재보궐선거</a></li>
+						        <li><a target="" href="">2020 도쿄올림픽</a></li>
+						    </ul>
+						</div>
+						<div id="left_menu_9" class="left_menu" style="display:none;">
+						    <h3>광고&#183;비즈니스</h3>
+						    <ul>
+						        <li><a href="">TV광고</a></li>
+						        <li><a href="">큐톤시간표</a></li>
+						        <li><a href="">인터넷·모바일 광고</a></li>
+						        <li><a href="">해외 광고</a></li>
+						        <li><a href="">사업 제휴</a></li>
+						        <li><a href="">동영상 뉴스 판매</a></li>
+						        <li><a href="">오디오 음원 판매</a></li>
+						        <li><a href="">뉴스·프로그램 공급</a></li>
+						    </ul>
+						</div>
+						<div id="left_menu_10" class="left_menu" style="display:none;">
+						    <h3>디지털 서비스</h3>
+						    <ul>
+						        <li><a target="" href="">뉴스알림</a></li>
+						        <li><a target="" href="">모바일APP</a></li>
+						        <li><a target="" href="">리더스 뉴스레터</a></li>
+						        <li><a target="" href="">유튜브</a></li>
+						        <li><a target="" href="">페이스북</a></li>
+						        <li><a target="" href="">트위터</a></li>
+						        <li><a target="" href="">인스타그램</a></li>
+						        <li><a target="" href="">네이버채널</a></li>
+						        <li><a target="" href="">네이버TV</a></li>
+						        <li><a target="" href="">네이버밴드</a></li>
+						        <li><a target="" href="">틱톡</a></li>
+						        <li><a target="" href="">데일리모션</a></li>
+						    </ul>
+						</div>
+						<div class="mid">
+							<div>
+								<a href="https://www.ytn.co.kr/_hd/hd_live.html">
+									<img src="../img/live.png" alt="24시간 라이브 방송">
+									<span>24시간 라이브 방송</span>
+								</a>
+							</div>
+						</div>
+						<div class="right">
+							<h2><span class="ico"></span></h2>
+							<ul>
+								<li><a href="">비트코인 창시자 '사토시' 정체 밝혀지나?...美서 재판 시작</a></li>
+								<li><a href="">[현장영상] 윤석열 "천안함 사건을 정치 영역으로 끌고 들어올 ...</a></li>
+								<li><a href="">'천궁II' UAE에 4조 규모 수출...탄도탄 요격 능력 해외서도 인정</a></li>
+								<li><a href="">아이들 학교 급식에도 계급이 있다? ‘차별급식’의 실태</a></li>
+								<li><a href="">내일 새벽 0시부터 일산대교 통행료 징수 재개</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="menu_black" id="menu_black" onclick="$('#hammenu, #menu_black').hide();" style="display:none;"></div>
+				<!---------------------- 햄버거 메뉴 끝 ---------------------->
+				<!---------------------- 스크롤 전 메뉴 ---------------------->
+				<style> /* 캠페인용 로고 스타일 */
+					.gnb_logo .ico, .dark .gnb_logo .ico{display:none;}
+					.scroll .gnb_logo .ico{display:inline-block;width:70px;height:22px;background:url(../img/logo_ytn_small.png) no-repeat}
+					.gnb_logo_0610{margin-left:-312px;margin-top:-10px} /* ../img/comm/logo_ytn_210610.png */
+					.dark.scroll .gnb_logo .ico{background: url(../img/comm/logo_ytn_small_w.png);}
+					.scroll .gnb_logo img{display:none}
+				</style>
+				<h1 class="gnb_logo YTN_CSA_logo">
+					<a href="https://www.ytn.co.kr">
+						<span id="gnb_logo_ico" class="ico"></span>
+						<img id="gnb_logo_img" class="gnb_logo_default" src="../img/logo_ytn.png">
+					</a>
+				</h1>
+				<div class="gnb_login">
+					<a class="btn_login YTN_CSA_login" href="javascript:void(0);" onclick="$('.box_login').toggle(); $('.box_search').hide();" style="display:inline-block;"><span class="blind">로그인</span></a>
+					<div class="box_login" style="display:none;">
+						<a id="loginChk1" href="">로그인</a>
+						<a id="loginChk2" href="">회원가입</a>
+					</div>
+					<a class="btn_search YTN_CSA_search" href="javascript:void(0);" onclick="$('.box_search').show(); $('.box_login').hide(); $('#q').focus();" style="display:inline-block;"><span class="blind">검색하기</span></a>
+				</div>
+			</div>
+			<!---------------------- 검색창 ---------------------->
+			<div class="box_search" style="display:none;">
+				<form name="web_search2" target="_top" action="" method="get" onsubmit="searchChk('web_search2');">
+				<div class="wrapper">
+					<button class="menu_close" onclick="$('.box_search').hide(); return false;"><span class="blind">메뉴 닫기</span></button>
+					<input id="q" name="q" type="text" title="검색어 입력" placeholder="검색어를 입력해주세요" class="placeholder ui-autocomplete-input" autocomplete="off" onkeypress="if(event.keyCode==13){ searchChk('web_search2'); }">
+					<button class="btn_search"><span class="blind">검색하기</span></button>
+				</div>
+				</form>
+			</div>
+		</div>
+		<!---------------------- 상단고정메뉴 ---------------------->
+		<div class="menu_wrap wrapper">
+			<div class="gnb_menu">
+				<div style="margin: auto;">
+					<ul>
+						<li class="YTN_CSA_live"><a href="">LIVE<span class="live_blink" style="margin-left:5px"></span></a></li>
+						<li class="YTN_CSA_mainnews"><a href="">분야별뉴스</a></li>
+						<li class="YTN_CSA_mainyp"><a href="">와플뉴스</a></li>
+						<li class="YTN_CSA_mainphoto"><a href="">YTN star</a></li>
+						<li class="YTN_CSA_mainreplay"><a href="">다시보기</a></li>
+						<li class="YTN_CSA_yreport"><a href="">제보</a></li>
+						<li class="YTN_CSA_corona" style="color: #1C9DE9;"><a href="">코로나19</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="sub_header_bnr">
+	    <div class="bnr bnr_notice YTN_CSA_mainbnr">
+	        <div class="wrapper">
+	            <a href="javascript:void(0);" onclick="location.href='https://www.ytn.co.kr/issue/corona.php'" style="cursor:pointer;width:100%;height:60px;background:url('https://ytn.co.kr/img/banner/bnr_corona.png') no-repeat 0 0;letter-spacing:-0.5px;overflow:hidden">
+	                <div style="padding-left:240px;padding-top:20px;font-size:15px;font-weight:bold;">확진 402,775명<span style="position:relative;padding-left:20px"><span style='position:absolute;top:-1px;left:12px;color:#d2c189;font-weight:normal;font-size:16px;'>|</span> 완치 366,089명</span><span style='position:relative;padding-left:20px'><span style='position:absolute;top:-1px;left:12px;color:#d2c189;font-weight:normal;font-size:16px;'>|</span> 사망 3,158명</span><span style='position:relative;padding-left:30px'>
+	                        <div style="display:inline-block;position:absolute;top:1px;"><img src="https://ytn.co.kr/img/banner/bnr_corona_text.png" style="display:inline-block;vertical-align:top" alt="예방 접종현황"></div> <span style="padding-left:120px">1차 접종 42,062,748명</span><span style="position:relative;padding-left:20px"><span style="position:absolute;top:-1px;left:12px;color:#d2c189;font-weight:normal;font-size:16px;">|</span> 접종률 81.9%</span>
+	                </div>
+	            </a>
+	        </div>
+	    </div>
+	</div>
+<div id="wrap">
+<div class="main wrapper" style="margin-bottom: 32px;">
+	<div class="vod_list_top">
+		<!-------------------- 탑기사 1 -------------------->
+		<div class="top_li1 YTN_CSA_topnews0">
+				<div class="thumbwrap">
+					<div class="thumb">
+						<div class="centered">
+							<a href=""><img src="https://image.ytn.co.kr/general/jpg/2021/1117/202111171256093626_t.jpg" alt="'천궁II' UAE에 4조 규모 수출…&quot;요격 능력 세계가 인정&quot;"></a>
+						</div>
+					</div>
+				</div>
+				<div class="tilwrap">
+					<span class="til"><a href="">'천궁II' UAE에 4조 규모 수출…"요격 능력 세계가 인정"</a></span>
+				</div>
+				<span class="desc"><a href="">[앵커] 미사일 잡는 미사일로 알려진 국산 지대공 미사일 '천궁 II'(천궁 투)가 UAE에 4조 원 규모로 수출됩니다. 탄도탄 요격에 있어 세계 4대 강국인 우리의 기술력이 해외시장에서 인정받았다는 의미가 있습니다. 보도에 이승윤 기자입니다. [기자] 팔레스타인 무장조직 하마스가 이스라엘을 향해 발사한 로켓들이 하늘을 메웁니다. 하지만 이스라엘의 요격 체계인 아이언돔에 의해 90%가 격추됐습니다...</a></span>
+		</div>
+		<!-------------------- 탑기사 2,3,4 -------------------->
+		<div class="top_li2">
+			<ul>
+                <li class="YTN_CSA_topnews1">
+                    <div class="thumbwrap">
+                        <div class="thumb">
+                            <div class="centered">
+                                <a href=""><img src="https://image.ytn.co.kr/general/jpg/2021/1117/202111171439151337_h.jpg" alt="[단독] 일본 축구 대표팀 소개에 태극기 송출? 치명적 그래픽 실수 "></a>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="til"><a href=""><span class="tag">단독</span> 일본 축구 대표팀 소개에 태극기 송출? 치명적 그래픽 실수 </a></span>
+                    <span class="desc"><a href="">tvN이 일본과 오만의 2022 카타르 월드컵 최종예선을 중계 하던 중 ...</a></span>
+                </li>
+                <li class="YTN_CSA_topnews2">
+                    <div class="thumbwrap">
+                        <div class="thumb">
+                            <div class="centered">
+                                <a href=""><img src="https://image.ytn.co.kr/general/jpg/2021/1117/202111171217177517_h.jpg" alt="아이들 학교 급식에도 계급이 있다? ‘차별급식’의 실태"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="til"><a href="">아이들 학교 급식에도 계급이 있다? ‘차별급식’의 실태</a></span>
+                    <span class="desc"><a href="">YTN라디오(FM 94.5) [YTN 뉴스FM 슬기로운 라디오생활] □ 방송일...</a></span>
+				</li>
+                <li class="YTN_CSA_topnews3">
+                    <div class="thumbwrap">
+                        <div class="thumb">
+                            <div class="centered">
+                                <a href=""><img src="https://image.ytn.co.kr/general/jpg/2021/1117/202111171129295692_h.jpg" alt="'오징어 게임', 넷플릭스 역대 히트작 1위…시청시간 18만 8천 년"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="til"><a href="">'오징어 게임', 넷플릭스 역대 히트작 1위…시청시간 18만 8천 년</a></span>
+                    <span class="desc"><a href="">넷플릭스가 창사 후 처음 공개한 역대 히트작 순위에서 '오징어 게임...</a></span>
+				</li>
+                <li class="YTN_CSA_topnews4">
+                    <div class="thumbwrap">
+                        <div class="thumb">
+                            <div class="centered">
+                                <a href=""><img src="https://img2.mobon.net/ad/imgfile/2021/c2tiMjI0MQ==/0819165857-waBNp3f320x200.jpg"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="til"><a href="">기업통신환경에 최적화된 인터넷 전화서비스!</a></span>
+				</li>
+                <!-------------------- 탑기사 광고 영역 -------------------->
+			</ul>
+		</div>
+	</div>
+	<!-- 이벤트 배너 -->
+	<div><a href='' target='_blank'><img src='https://ytn.co.kr/img/banner/bnr_wiseman1st_main.jpg' style='margin-top:-1px;' alt='와이즈맨 1주년 기념 이벤트'></a></div>
+	<!-- //이벤트 배너 -->
+	<div class="now">
+		<h2><span class="ico"><span class="blind">이 시각 주요뉴스</span></span></h2>
+		<!-------------------- 하단 기사 상단 -------------------->	
+		<div class="now01 YTN_CSA_bottomnews1">
+			<ul >
+				<li>
+                    <div class="thumbwrap">
+                        <div class="thumb">
+                            <div class="centered">
+                                <a href="">
+                                <img src="https://image.ytn.co.kr/general/jpg/2021/1117/202111171249013960_h.jpg" alt="파우치 &quot;코로나19, 내년 미국에서 토착병 될 수 있어&quot;">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <span><a href="">파우치 "코로나19, 내년 미국에서 토착병 될 수 있어"</a></span>	
+				</li>
+				<li><a href=""><span>이재명, 오늘도 '청년' 간담회…윤석열, 선대위 막판 조율</span></a></li>
+				<li><a href=""><span>안철수 "준 모병제 도입…전문 부사관 확대" 청년 공약 발표</span></a></li>
+			</ul>
+			
+			<ul >
+				<li>
+                    <div class="thumbwrap">
+                        <div class="thumb">
+                            <div class="centered">
+                                <a href="">
+                                <img src="https://image.ytn.co.kr/general/jpg/2021/1117/202111171035525923_h.jpg" alt="'무료'였던 일산대교, 내일 새벽 0시부터 통행료 징수">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <span><a href="">'무료'였던 일산대교, 내일 새벽 0시부터 통행료 징수</a></span>	
+				</li>
+				<li><a href=""><span>'이자 파티' 벌이는 은행…정부는 '수수방관'</span></a></li>
+				<li><a href=""><span>"우주 쓰레기 9천 600톤이 인류를 위협한다"</span></a></li>
+			</ul>
+			<ul >
+				<li>
+                    <div class="thumbwrap">
+                        <div class="thumb">
+                            <div class="centered">
+                                <a href="">
+                                <img src="https://image.ytn.co.kr/general/jpg/2021/1117/202111171052272335_h.jpg" alt="신규 환자 3,187명 역대 2번째 규모…고령층 추가접종 간격 4개월로 단축">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <span><a href="">신규 환자 3,187명 역대 2번째 규모…고령층 추가접종 간격 4개월로 단축</a></span>	
+				</li>
+				<li><a href=""><span>'수능 D-1' 예비소집…"확진·격리 통보받으면 신고"</span></a></li>
+				<li><a href=""><span>서울 중환자 병상 5개 중 1개만 남아…중증 증가에 '비상'</span></a></li>
+			</ul>
+			<ul style='padding:0'>
+				<li>
+                    <div class="thumbwrap">
+                        <div class="thumb">
+                            <div class="centered">
+                                <a href="">
+                                <img src="https://image.ytn.co.kr/general/jpg/2021/1117/202111171011223752_h.jpg" alt="'테슬라 대항마' 리비안, 상장 5일 만에 시가총액 3위 우뚝">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <span><a href="">'테슬라 대항마' 리비안, 상장 5일 만에 시가총액 3위 우뚝</a></span>	
+				</li>
+				<li><a href=""><span>"미중 정상회담 성과는 충돌 방지와 북한 문제"</span></a></li>
+				<li><a href=""><span>日 기시다 총리 선거 연설에 '청중 동원' 의혹…일당 약 5만 원 지급</span></a></li>
+			</ul>
+        </div>
+		<!-------------------- 하단 기사 하단 -------------------->	
+		<div class="now02 YTN_CSA_bottomnews2">
+			<ul>
+				<li>
+                    <div class="thumbwrap">
+                        <div class="thumb">
+                            <div class="centered">
+                                <a href="">
+                                <img data-src="https://image.ytn.co.kr/general/jpg/2021/1117/202111171336514532_h.jpg" alt="'대장동 수사' 검·경, '로비 의혹' 곽상도·최윤길 동시 압수수색">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <span><a href="">'대장동 수사' 검·경, '로비 의혹' 곽상도·최윤길 동시 압수수색</a></span>
+				</li>
+				<li><a href=""><span>'주가조작' 권오수 구속…尹 부인 김건희 수사 속도</span></a></li>
+				<li><a href=""><span>경찰, '뇌물수수 의혹' 최윤길 자택·화천대유 압수수색</span></a></li>
+			</ul>
+			<ul>
+				<li>
+                    <div class="thumbwrap">
+                        <div class="thumb">
+                            <div class="centered">
+                                <a href="">
+                                <img data-src="https://image.ytn.co.kr/general/jpg/2021/1117/202111171228411741_h.jpg" alt="&quot;공군 법무실장이 '이 중사 사건' 수사 무마 지시&quot;">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <span><a href="">"공군 법무실장이 '이 중사 사건' 수사 무마 지시"</a></span>
+				</li>
+				<li><a href=""><span>안산시, 요소수 2백t 확보 대중교통 화물업체에 공급</span></a></li>
+				<li><a href=""><span>올해 서울에서 거래된 주택 2건 중 1건은 '빌라'</span></a></li>
+			</ul>
+			<ul>
+				<li>
+                    <div class="thumbwrap">
+                        <div class="thumb">
+                            <div class="centered">
+                                <a href="">
+                                <img data-src="https://image.ytn.co.kr/general/jpg/2021/1117/202111170918013729_h.jpg" alt="위드 코로나 훈풍? 연말 성과급 계획 기업 7년 내 최고">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <span><a href="">위드 코로나 훈풍? 연말 성과급 계획 기업 7년 내 최고</a></span>
+				</li>
+				<li><a href=""><span>농식품부, '메타버스'로 농촌 알리는 '욱 크래프트' 공개</span></a></li>
+				<li><a href=""><span>올해 김장비용 전통시장 35만 원·대형마트 42만 원</span></a></li>
+			</ul>
+            <!-- 300x250 광고 -->
+            <div style="width: 300px;height:250px;display: inline-block;margin-left: 13px;"><a href=""><img src="https://imgnewad.ytn.co.kr/image/kdb/210901_kdb_300_250.png" alt="null" width="100%" height="100%" border="0" style="padding:0px; margin:0px;"></a></div>
+			
+		</div>
+	</div>
+    <div><a href=''><img src='https://ytn.co.kr/img/banner/bnr_star210707_main.jpg' style='margin-top:-1px;' alt='웹툰뉴스 홍보' /></a></div>
+
+	<div class="many YTN_CSA_popularnews">
+		<h2><span class="ico"><span class="blind">많이 본 뉴스</span></span></h2>
+		<div>
+            <ul>
+                <li><a href="">비트코인 창시자 '사토시' 정체 밝혀지나?...美서 재판 시작</a></li>
+                <li><a href="">[현장영상] 윤석열 "천안함 사건을 정치 영역으로 끌고 들어올 생각 없어"</a></li>
+                <li><a href="">'천궁II' UAE에 4조 규모 수출...탄도탄 요격 능력 해외서도 인정</a></li>
+                <li><a href="">아이들 학교 급식에도 계급이 있다? ‘차별급식’의 실태</a></li>
+                <li><a href="">내일 새벽 0시부터 일산대교 통행료 징수 재개</a></li>
+            </ul>
+            <ul>	
+                <li><a href="">'오징어 게임', 넷플릭스 역대 히트작 1위...시청시간 18만 8천 년</a></li>
+                <li><a href="">'테슬라 대항마' 리비안, 상장 5일 만에 시가총액 3위 우뚝</a></li>
+                <li><a href="">'담배 피우지 말랬다고' 중학생들 식당서 난동..."우리는 교도소 안 가"</a></li>
+                <li><a href="">[취재N팩트] '이자 파티' 벌이는 은행...정부는 '수수방관'</a></li>
+                <li><a href="">[자막뉴스] 콘크리트 아닌 모래를 채운 지하차도...370만 원만 돌려받고 끝?</a></li>
+            </ul>
+		</div>
+	</div>
+</div>
+
+<!-- 970*250 광고 -->
+<div class="ad" style="background-color: #F2F2F2; width: 100%; height: 250px;margin-bottom: 30px;">
+    <div style="width: 970px;height: 250px;margin:0 auto">
+        <a href=""><img src="https://imgnewad.ytn.co.kr/image/jangheung/211115_jangheung_970_250.jpg" alt="null" width="100%" height="100%" border="0" style="padding:0px; margin:0px;"></a> 
+    </div>
+</div>
+
+<div class="main wrapper" style="margin-bottom: 60px;">
+	<div class="yp">
+		
+		<!-------------------- YTN STAR -------------------->	
+		<div class="YTN_CSA_star">
+			<h2 class="hlink">
+				<a href="">
+					<span class="ico"><span class="blind">YTN star</span></span>
+				</a>
+			</h2>
+			<div class="top">
+				<ul>
+                    <li>
+                        <div class="thumbwrap">
+                            <div class="thumb">
+                                <div class="centered">
+                                    <a href="">
+                                    <img data-src="https://image.ytn.co.kr/general/jpg/2021/1117/202111171338555535_h.jpg" alt="전현무부터 키까지...나 혼자 산다, 새 포스터 공개">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <span><a href="">전현무부터 키까지...나 혼자 산다, 새 포스터 공개</a></span>
+					</li>
+                    <li>
+                        <div class="thumbwrap">
+                            <div class="thumb">
+                                <div class="centered">
+                                    <a href="">
+                                    <img data-src="https://image.ytn.co.kr/general/jpg/2021/1117/202111171319145356_h.jpg" alt="'꽃 피면 달 생각하고', 포스터 공개…다급한 유승호 VS 여유만만 이혜리">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <span><a href="">'꽃 피면 달 생각하고', 포스터 공개…다급한 유승호 VS 여유만만 이혜리</a></span>
+					</li>
+                </ul>
+			</div>
+			<div class="bot">
+				<ul>
+                    <li><a href="">이정 “내년 5월에 결혼, 이미 혼인신고 마쳐” (‘라디오스타’)</a></li>
+                    <li><a href="">윤다영, 코로나19 확진…'국가대표 와이프' 촬영 중단</a></li>
+                </ul>
+			</div>
+		</div>
+		
+		<!-------------------- 와플뉴스 -------------------->	
+		<div class="YTN_CSA_yp">
+			<h2 class="hlink">
+				<a href="">
+					<span class="ico"><span class="blind">와플뉴스</span></span>
+				</a>
+			</h2>
+			<div class="top">
+				<ul>
+                    <li>
+                        <div class="thumbwrap">
+                            <div class="thumb">
+                                <div class="centered">
+                                    <a href="">
+                                    <img data-src="https://image.ytn.co.kr/general/jpg/2021/1117/202111171345207471_h.jpg" alt="[자막뉴스] 차량용 기계 부품 열자...쏟아져 나온 '하얀색 봉지'">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <span><a href="">[자막뉴스] 차량용 기계 부품 열자...쏟아져 나온 '하얀색 봉지'</a></span>
+					</li>
+                    <li>
+                        <div class="thumbwrap">
+                            <div class="thumb">
+                                <div class="centered">
+                                    <a href="">
+                                    <img data-src="https://image.ytn.co.kr/general/jpg/2021/1115/202111152021038622_h.jpg" alt="무인카페서 담배 피우며 난장판으로 만들고 도망간 5명의 남성 [제보영상]">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <span><a href="">무인카페서 담배 피우며 난장판으로 만들고 도망간 5명의 남성 [제보영상]</a></span>
+					</li>
+                </ul>
+			</div>
+			<div class="bot">
+				<ul>
+                    <li><a href="">[자막뉴스] '영끌·빚투'의 암울한 결과...은행은 그야말로 '이자 파티'</a></li>
+                    <li><a href="">[자막뉴스] "경찰들도 제압 못해"...10대들, 왜 식당 뒤엎었나</a></li>
+                </ul>
+			</div>
+		</div>
+	</div>
+	<div style="padding-bottom:20px;border-bottom:1px solid #E1E3E3">
+	<div class="replay2 dolbal YTN_CSA_dolbal" style="margin-right:7px;">
+		<h2 class="hlink">
+			<a href=""><span class="ico"><span class="blind">돌발영상</span></span></a>
+		</h2>
+		<ul>
+            <li>
+				<div class="thumbwrap">
+					<div class="thumb">
+						<div class="centered"><a href=""><img data-src="https://image.ytn.co.kr/special/jpg/0498/2021/202111161151249019_h.jpg" alt="[돌발영상] 난에 대해 궁금한 것" class="lazy-loaded" /></a></div>
+					</div>
+				</div>
+				<span class="til"><a href="">[돌발영상] 난에 대해 궁금한 것</a></span>
+			</li>
+            <li>
+				<div class="thumbwrap">
+					<div class="thumb">
+						<div class="centered"><a href=""><img data-src="https://image.ytn.co.kr/special/jpg/0498/2021/202111151317571328_h.jpg" alt="[돌발영상] 기울어진 운동장" class="lazy-loaded" /></a></div>
+					</div>
+				</div>
+				<span class="til"><a href="">[돌발영상] 기울어진 운동장</a></span>
+			</li>
+        </ul>
+	</div>
+	<div class="replay2 zoom YTN_CSA_sisa" style="width:266px;margin-right:7px">
+		<h2 class="hlink">
+			<a href=""><span class="ico"><span class="blind">시사토크 알고리줌</span></span></a>
+		</h2>
+		<ul>
+            <li>
+				<div class="thumbwrap">
+					<div class="thumb">
+						<div class="centered"><a href=""><img data-src="https://image.ytn.co.kr/special/jpg/0510/2021/202111121712473516_h.jpg" alt="[#알고리줌] 보수는 집결 vs. ‘샤이 진보’ 늘어" class="lazy-loaded" /></a></div>
+					</div>
+				</div>
+				<span class="til"><a href=""> 보수는 집결 vs. ‘샤이 진보’ 늘어</a></span>
+			</li>
+        </ul>
+	</div>
+
+	<div class="replay2 report YTN_CSA_report" style="width:266px">
+		<h2 class="hlink">
+			<a href=""><span class="ico"><span class="blind">탐사보고서 기록</span></span></a>
+		</h2>
+		<ul>
+            <li>
+				<div class="thumbwrap">
+					<div class="thumb">
+						<div class="centered"><a href=""><img data-src="https://image.ytn.co.kr/special/jpg/0509/2021/202109201950139121_h.jpg" alt="[YTN 탐사 보고서 기록] 강릉 이야기" class="lazy-loaded" /></a></div>
+					</div>
+				</div>
+				<span class="til"><a href="">[YTN 탐사 보고서 기록] 강릉 이야기</a></span>
+			</li>
+        </ul>
+	</div>
+</div>
+	<div style="padding-bottom:20px;border-bottom:1px solid #E1E3E3">
+	<!-------------------- 다시보기 -------------------->
+	<div class="replay2 YTN_CSA_replay" style="margin-right:7px">
+		<h2 class="hlink">
+			<a href=""><span class="ico"><span class="blind">NEW 다시보기</span></span></a>
+		</h2>
+		<ul>
+            <li>
+				<div class="thumbwrap">
+					<div class="thumb">
+						<div class="centered">
+							<a href=""><img data-src="https://image.ytn.co.kr/general/jpg/2021/1117/202111171314341472.jpg" alt="뉴스N이슈"></a>
+						</div>
+					</div>
+				</div>
+				<span class="cate"><a href="">뉴스N이슈</a></span>
+				<span class="til"><a href="">뉴스N이슈</a></span>
+			</li>
+					<li>
+				<div class="thumbwrap">
+					<div class="thumb">
+						<div class="centered">
+							<a href=""><img data-src="https://image.ytn.co.kr/general/jpg/2021/1117/202111171151422479.jpg" alt="뉴스N이슈"></a>
+						</div>
+					</div>
+				</div>
+				<span class="cate"><a href="">뉴스N이슈</a></span>
+				<span class="til"><a href="">뉴스N이슈</a></span>
+			</li>
+		</ul>
+	</div>
+	
+	<div class="replay2 dolbalreplay YTN_CSA_replay" style="position:relative;margin-top:65px;width:266px;margin-right:7px">
+		<ul>
+			<li>
+				<div class="thumbwrap">
+					<div class="thumb">
+						<div class="centered">
+							<a href=""><img data-src="https://image.ytn.co.kr/special/jpg/ground/2021/202111171101505973_h.jpg" alt="중앙재난안전대책본부 브리핑 (11월 17일)"></a>
+						</div>
+					</div>
+				</div>
+				<span class="cate"><a href="">현장생중계</a></span>
+				<span class="til"><a href="">중앙재난안전대책본부 브리핑 (11월 17일)</a></span>
+			</li>
+		</ul>
+	</div>
+
+    <!-------------------- 와이파일 -------------------->
+	<div class="replay2 yfile YTN_CSA_yfile" style="width:266px">
+		<h2 class="hlink">
+			<a href=""><span class="ico"><span class="blind">와이파일</span></span></a>
+		</h2>	
+		<a href=""><img src="https://www.ytn.co.kr/img/banner/bnr_main_yfile.jpg" alt="와이파일"></a>
+        <ul>
+            <li><a href=""> 신유빈도 혼쭐낸 '콜라 아줌마' 니샤렌, "...</a></li>
+            <li><a href=""> 국방부가 '화이트 햇'을 키우는 이유는? ...</a></li>
+            <li><a href="">“육해공 우주 전략 헤쳐모여!”…각군 이기주...</a></li>
+        </ul>
+	</div>
+</div>
+	<div style="padding-bottom:20px;border-bottom:1px solid #E1E3E3">
+		<!-------------------- HOT 클릭 -------------------->
+		<div class="replay2 YTN_CSA_hotclick" style="width:820px;margin-right:7px">
+			<h2>
+				<span class="ico" style="background: url(../img/comm/txt_hot2.png);width:118px"><span class="blind">HOT 클릭</span></span>
+			</h2>
+			<ul>
+							<li>
+					<div class="thumbwrap">
+						<div class="thumb">
+							<div class="centered">
+								<a href=""><img data-src="https://image.ytn.co.kr/general/jpg/2021/1117/202111170958181658_k.jpg" alt="엑소 첸, 군 복무 중 아내 둘째 임신 (공식입장)"></a>
+							</div>
+						</div>
+					</div>
+					<span class="til" style="padding-top:4px"><a href="">엑소 첸, 군 복무 중 아내 둘째 임신 (공식입장)</a></span>
+				</li>
+								<li>
+					<div class="thumbwrap">
+						<div class="thumb">
+							<div class="centered">
+								<a href=""><img data-src="https://image.ytn.co.kr/general/jpg/2021/1117/202111170932527663_k.jpg" alt="이정재♥임세령 단체 사진서도 나란히…이병헌·정우성도 등장 "></a>
+							</div>
+						</div>
+					</div>
+					<span class="til" style="padding-top:4px"><a href="">이정재♥임세령 단체 사진서도 나란히…이병헌·정우성도 등장 </a></span>
+				</li>
+								<li>
+					<div class="thumbwrap">
+						<div class="thumb">
+							<div class="centered">
+								<a href=""><img data-src="https://image.ytn.co.kr/general/jpg/2021/1117/202111170940015914_k.jpg" alt="트위터 CFO &quot;지금 당장은 암호화폐 투자 타당하지 않아&quot; 발언"></a>
+							</div>
+						</div>
+					</div>
+					<span class="til" style="padding-top:4px"><a href="">트위터 CFO "지금 당장은 암호화폐 투자 타당하지 않아" 발언</a></span>
+				</li>
+							</ul>
+		</div>
+		<!-------------------- 오늘의 날씨 -------------------->
+		<div class="replay2 dolbal YTN_CSA_weather" style="width:266px">
+
+			<h2 class="hlink">
+				<a href="">
+					<span class="ico" style="background: url(../img/comm/txt_weather2.png);width:144px"><span class="blind">오늘의 날씨</span></span>
+				</a>
+
+			</h2>
+			<ul>
+							<li>
+					<div class="thumbwrap">
+						<div class="thumb">
+							<div class="centered">
+								<a href=""><img data-src="https://image.ytn.co.kr/general/jpg/2021/1117/202111171254196551_k.jpg" alt="[날씨] 맑고 선선, 큰 일교차...수능일, 중서부 약한 비"></a>
+							</div>
+						</div>
+					</div>
+					<span class="til" style="padding-top:4px"><a href="">[날씨] 맑고 선선, 큰 일교차...수능일, 중서부 약한 비</a></span>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="group">
+			<div class="recomm YTN_CSA_recomm">
+			<h2>
+				<span class="ico"><span class="blind">추천 콘텐츠</span></span>
+			</h2>
+			<div class="group_wrap">
+				<div class="recommslide">
+					<div>
+						<a id="reSlidea1_1" href="" target="" class="chwrap li"></a>
+						
+							<div class="thumbwrap">
+								<div class="thumb">
+									<div class="centered">
+										<a id="reSlidea1_2" href=""><img id="reSlidea1_3" src="https://imgweather.ytn.co.kr/0297/2020/202007281102380860_h.jpg" alt=""></a>
+									</div>
+								</div>
+							</div>
+							<a id="reSlidea1_5" href="">
+							<span id="reSlidea1_4">아직 끝나지 않은 전쟁, 정전협정 l 뉴스멘터리 전쟁과 사람 [1회] / YTN2</span>
+							</a>
+					</div>
+					<div>
+						<a id="reSlidea2_1" href="" target="" class="chwrap sc"></a>
+							<div class="thumbwrap">
+								<div class="thumb">
+									<div class="centered">
+										<a id="reSlidea2_2" href=""> 
+										<img id="reSlidea2_3" src="https://imgscience.ytn.co.kr/sciencetv/jpg/vod0082/2020//202007291147414719_h.jpg" alt="">
+										</a>
+									</div>
+								</div>
+							</div>
+							<a id="reSlidea2_5" href=""><span id="reSlidea2_4">유럽, 휴가철 '코로나19' 2차 폭풍 우려...독일·벨기에 방역 강화</span></a>
+					</div>
+                    <div>
+                        <a id="reSlidea1_1" href="" target="" class="chwrap ra"></a>
+                            <div class="thumbwrap">
+                                <div class="thumb">
+                                    <div class="centered">
+                                        <a id="reSlidea1_2" href=""><img id="reSlidea1_3" src="https://imgradio.ytn.co.kr/program_info//pro_img6_0433.jpg" alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a id="reSlidea1_5" href="">
+                            <span id="reSlidea1_4">캐스퍼 vs 레이, 국산 경차 시장에 활기가?[슬라생] 11.17(수) (김필수 교수) </span>
+                            </a>
+                    </div>
+                    <div>
+                        <a id="reSlidea2_1" href="" target="" class="chwrap sc"></a>
+                            <div class="thumbwrap">
+                                <div class="thumb">
+                                    <div class="centered">
+                                        <a id="reSlidea2_2" href=""> 
+                                        <img id="reSlidea2_3" src="https://imgscience.ytn.co.kr/sciencetv/jpg/vod1396/2021//202111171008444490_h.jpg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a id="reSlidea2_5" href=""><span id="reSlidea2_4">[시즌3] 평화로운 고쳐듀오에 오징어의 등장이라...!</span></a>
+                    </div>
+                    
+				</div>
+			</div>
+		</div>
+		<script>
+            $(document).ready(function(){
+                var vodslider = $('.recommslide').bxSlider({
+                    auto:true,					//자동 슬라이드
+                    autoControls: true,			//이전,다음 버튼
+                    autoControlsCombine: true,	//시작,정지 버튼
+                    autoHover: true,			//마우스 호버 슬라이드 정지
+                    pause:4000,
+                    minSlides: 2,
+                    maxSlides: 2,
+                    moveSlides: 2,
+                    slideWidth: 366,
+                    slideMargin: 12,
+                    touchEnabled:false
+                });
+            });
+            </script>
+		<!------------------------- 뉴스레터 구독 ------------------------->
+		<div class="letter YTN_CSA_newsletter">
+			<h2><span class="blind">YTN 리더스 뉴스레터 : 대한민국 리더들을 위한 프리미엄 뉴스</span></h2>
+			<span class="blind">아침과 저녁 매일 2번 주요뉴스를 모아서 메일로 보내드립니다.</span>
+			<input id="nMail" type="text" placeholder="Email 주소를 입력하세요.">
+			<a class="sub""><span>구독하기</span></a>
+		</div>
+	</div>
+	<script type="text/javascript" src="/js/jquery.bxslider.js"></script>
+	<div class="group noti">
+		<h2>
+			<span class="ico"><span class="blind">알려드립니다</span></span>
+		</h2>
+		<div class="group_wrap YTN_CSA_campaign">
+			<div class="notislide vodslider">
+                <div>
+					<a href="">
+						<img src="https://image.ytn.co.kr/ytn/campaign/202105201712128880.jpg" alt="YTN 채널 번호 변경 안내">
+						<span>YTN 채널 번호 변경 안내</span>
+					</a>
+				</div>
+                <div>
+					<a href="">
+						<img src="https://image.ytn.co.kr/ytn/campaign/202110260944490623.jpg" alt="갤러리 YTN 아트스퀘어 초대전">
+						<span>전시장소: YTN 1층 로비 아트스퀘어</span>
+					</a>
+				</div>
+                <div>
+					<a href="">
+						<img src="https://image.ytn.co.kr/ytn/campaign/202106220859010591.jpg" alt="휠체어 사용 아동 이동성 향상 프로젝트 모집안내">
+						<span>휠체어 사용 아동 이동성 향상 프로젝트 모집안내</span>
+					</a>
+				</div>
+                <div>
+					<a href="">
+						<img src="https://image.ytn.co.kr/ytn/campaign/202101181324219026.png" alt="YTN 캠페인 '다시, 일상으로!'">
+						<span>YTN 캠페인 '다시, 일상으로!'</span>
+					</a>
+				</div>
+                <div>
+					<a href="">
+						<img src="https://image.ytn.co.kr/ytn/campaign/202009230000170330.png" alt="YTN 남산서울타워">
+						<span>YTN 남산서울타워</span>
+					</a>
+				</div>
+                <div>
+					<a href="">
+						<img src="https://image.ytn.co.kr/ytn/campaign/202111120948035630.jpg" alt="이두리·호진 개인전">
+						<span>이두리·호진 개인전</span>
+					</a>
+				</div>
+                <div>
+					<a href="">
+						<img src="https://image.ytn.co.kr/ytn/campaign/202009221622227881.png" alt="YTN 데이터 저널리즘">
+						<span>YTN 데이터 저널리즘</span>
+					</a>
+				</div>
+                    <div>
+					<a href="">
+						<img src="https://image.ytn.co.kr/ytn/campaign/202009222359192638.png" alt="가짜뉴스를 신고해주세요.">
+						<span>가짜뉴스를 신고해주세요.</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		</div>
+		<script>
+		$(document).ready(function(){
+			var vodslider = $('.vodslider').bxSlider({
+				auto:true,					//자동 슬라이드
+				autoControls: true,			//이전,다음 버튼
+				autoControlsCombine: true,	//시작,정지 버튼
+				autoHover: true,			//마우스 호버 슬라이드 정지
+				pause:4000,
+				minSlides: 3,
+				maxSlides: 3,
+				moveSlides: 3,
+				slideWidth: 366,
+				slideMargin: 12,
+				touchEnabled:false
+			});
+			$('.controls .play').on('click', function(){
+				vodslider.startAuto();
+			})
+			$('.controls .pause').on('click', function(){
+				vodslider.stopAuto();
+			})
+		});
+		</script>
+	</div>
+</div>
+<!---------------------- 푸터 공통 ---------------------->
+<div id="footer" class="footer  YTN_CSA_footer">
+	<div class="foot_menu wrapper">
+		<div class="row">
+			<div class="col">
+				<strong class="mg"></a>YTN 미디어그룹</strong>
+				<ul>
+					<li><a href="" target="">YTN 회사소개</a></li>
+					<li><a href="" target="">INSIDE YTN</a></li>
+					<li><a href="" target="">YTN 사이언스</a></li>
+					<li><a href="" target="">YTN 라디오</a></li>
+					<li><a href="" target="">YTN2</a></li>
+					<li><a href="" target="">YTN dmb</a></li>
+					<li><a href="">YTN world</a></li>
+					<li><a href="">YTN korean</a></li>
+					<li><a href="" target="">YTN plus</a></li>
+					<li><a href="" target="">남산서울타워</a></li>
+				</ul>
+			</div>
+			<div class="col">
+				<strong class="mg">시청자센터</strong>
+				<ul>
+					<li><a href="">시청자의견</a></li>
+					<li><a href="">시민데스크</a></li>
+					<li><a href="">시청자브리핑 시시콜콜</a></li>
+					<li><a href="">시청자 위원회</a></li>
+					<li><a href="">고충처리위원회</a></li>
+					<li><a href="">사이버감사실</a></li>
+					<li><a target="" href="">견학신청</a></li>
+					<li><a target="" href="">성폭력신고센터</a></li>
+				</ul>
+			</div>
+			<div class="col">
+				<strong class="mg">알립니다</strong>
+				<ul>
+					<li><a href="">공지사항</a></li>
+					<li><a href="">채용공고</a></li>
+					<li><a href="">경품이벤트</a></li>
+					<li><a href="">채널 안내</a></li>
+					<li><a href="">위치 및 연락처</a></li>
+					<li><a href="">이용 도움말</a></li>
+				</ul>
+			</div>
+			<div class="col">
+				<strong class="mg">광고 및 비즈니스</strong>
+				<ul>
+					<li><a href="">TV광고</a></li>
+					<li><a href="">큐톤시간표</a></li>
+					<li><a href="">인터넷·모바일 광고</a></li>
+					<li><a href="">해외 광고</a></li>
+					<li><a href="">사업 제휴</a></li>
+					<li><a href="">동영상 뉴스 판매</a></li>
+					<li><a href="">오디오 음원 판매</a></li>
+					<li><a href="">뉴스·프로그램 공급</a></li>
+				</ul>
+			</div>
+			<div class="col">
+				<strong class="mg">약관 및 정책</strong>
+				<ul>
+					<li><a href="">이용약관</a></li>
+					<li><a href="">개인정보처리방침</a></li>
+					<li><a href="">청소년보호정책</a></li>
+					<li><a href="">기사배열 기본방침</a></li>
+				</ul>
+			</div>
+			<div class="col">
+				<strong class="mg">디지털 서비스</strong>
+				<ul>
+					<li><a href="">모바일 APP</a></li>
+					<li><a href="">뉴스알림</a></li>
+					<li><a href="">리더스 뉴스레터</a></li>
+					<li><a target="" href="">유튜브</a></li>
+					<li><a target="" href="">페이스북</a></li>
+					<li><a target="" href="">트위터</a></li>
+					<li><a target="" href="">인스타그램</a></li>
+					<li><a target="" href="">네이버채널</a></li>
+					<li><a target="" href="">네이버TV</a></li>
+					<li><a target="" href="">네이버밴드</a></li>
+					<li><a target="" href="">틱톡</a></li>
+					<li><a target="" href="">데일리모션</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="foot_info">
+		<div class="info1 wrapper">
+			<dl class="comp1">
+				<dt>㈜와이티엔</dt>
+				<dd>
+					<span>서울특별시 마포구 상암산로 76(상암동) | 대표자: 우장균 | 대표전화: 02-398-8000 | 팩스: 02-398-8129<br>사업자등록번호: 102-81-32883</span>
+				</dd>
+			</dl>
+			<dl class="comp2">
+				<dt>㈜와이티엔 플러스</dt>
+				<dd>
+					<span>서울특별시 마포구 상암산로 76(상암동) | 상호:YTN | 대표전화: 02-2160-7400 | 등록번호:서울 자000465 | 등록일자: 2010.05.11 |<br>발행일자: 1999.06.01 | 대표자: 우장균 | 기사배열 책임자: 김재형 | 청소년보호책임자: 윤미영</span>
+				</dd>
+			</dl>
+		</div>
+		<div class="info2">
+			<p>Copyright (c) YTN & YTN plus All rights reserved. 모든 컨텐츠(기사)는 저작권법의 보호를 받은바, 무단 전재·복사·배포를 금합니다.</p>
+		</div>
+	</div>
+</div>
+</div>
+<!-- //container -->
+</body>
+</html>
