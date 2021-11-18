@@ -1150,9 +1150,9 @@ button.btn_down::after{content:url(../img/comm/ico_download_b.png);position:rela
 .main .letter{width:352px;height:306px;margin-left:11px;background:url(../img/comm/bnr_letter.png);color:#fff;text-align:center}
 .main .letter input{display:block;width:280px;height:38px;background-color:#fff;padding:4px 12px;margin:0 auto;margin-top:165px;border:1px solid #E6E6E6;border-radius:8px}
 .letter .sub{display:block;border:2px solid #fff;padding:15px 110px;margin:0 auto;margin-top:12px;width:78px;border-radius:30px;color:#fff;font-size:16px;font-weight:700;margin-bottom:20px;transition:all .1s ease-in}
-.letter .sub span::after{content:url(img/ico_arrow_w.png);position:relative;width:8px;height:16px;top:3px;left:0;padding-left:8px}
+.letter .sub span::after{content:url(https://www.ytn.co.kr/img/ico_arrow_w.png);position:relative;width:8px;height:16px;top:3px;left:0;padding-left:8px}
 .letter .sub:hover{text-decoration:none;background:#fff;color:#032155}
-.letter .sub:hover span:after{content:url(../img/comm/ico_arrow_navy.png);}
+.letter .sub:hover span:after{content:url(https://www.ytn.co.kr/img/comm/ico_arrow_navy.png);}
 .main .noti .ico{width:124px;background:url(../img/comm/txt_main_noti.png)}
 .main .noti .bx-viewport{height:120px !important;}
 .main .notislide>div{display:inline-block;margin-right:17px;font-size:0}
