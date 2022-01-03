@@ -14,15 +14,37 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{di
 table{border-collapse:collapse;border-spacing:0}
 strong{font-weight:400}
 
-.head{background-color: red;width: 100%;height: 100px;}
-.content{background-color: wheat;width: 100%;}
+.head{position: relative;border-bottom: 2px solid #000;background:#f4f4f4;text-align:left;font-size: 0;}
+.content{width: 100%;}
 .foot{background-color: blue;width: 100%;height: 100px;}
+.wrap{padding: 2%;}
+
+.head>div{width: 50%;display: inline-block;}
+.head>div:nth-child(1){text-align: left;}
+.head>div:nth-child(2){text-align: right;}
+.head h1{display: inline-block;position: relative;left: 0;text-align: left;font-weight: 300;font-size: 24px;}
+.head ul{display: inline-block;text-align: right;font-size: 16px;}
+.head ul li{display: inline-block;font-weight: 800;padding-left: 16px;}
 
 
+h2{font-size: 44px; font-weight:800;}
+h3{font-size: 44px;font-weight: 800;}
+
+.top{background:#f4f4f4;position: relative;}
+.top .top_txt{width: 90%;}
+.top .top_img_wrap{width: 10%;height:120px;position: absolute;top: 0;right: 0;margin:2%;text-align: right;}
+.top .top_img{
+    background: red;
+    height: 120px;width: 120px;top: 0;right: 0;display: inline-block;
+    border-radius: 60px;
+}
 
 .slot{font-size: 0;}
-.slot li{width: 50%;overflow: hidden;font-size: 16px;display: inline-block;}
+.slot li{width: 49%;overflow: hidden;font-size: 16px;display: inline-block;}
 .slot li img{width: 100%;}
+.slot li:nth-child(2n){padding-left: 2%;}
+.slot .title{display: block;font-size: 24px;font-weight: 800;padding-top: 16px;padding-bottom: 8px;}
+
 
 .slot2{font-size: 0;}
 .slot2 li{background-color: tomato;}
