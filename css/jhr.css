@@ -57,7 +57,7 @@ h3{font-size: 44px;font-weight: 800;}
 
 .slot3{font-size: 0;display: flex;flex-wrap: wrap;justify-content: space-between;}
 .slot3 li{width: 120px;height: 120px;background-color: #235BED;margin-bottom: 1%;}
-
+.slot3 li a{display: inline-block;width: 100%;height: 100%;}
 
 .foot ul{display: flex;color: #fff;}
 .foot ul li{width:50%;height: 200px;}
