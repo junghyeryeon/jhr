@@ -16,8 +16,11 @@ strong{font-weight:400}
 
 .head{position: relative;border-bottom: 2px solid #000;background:#f4f4f4;text-align:left;font-size: 0;}
 .content{width: 100%;}
-.foot{background-color: blue;width: 100%;height: 100px;}
-.wrap{padding: 2%;}
+.foot{width: 100%;}
+.wrap{padding: 4%;}
+.slot_basic{font-size: 0;display: flex;flex-wrap: wrap;justify-content: space-between;vertical-align: top;}
+
+
 
 .head>div{width: 50%;display: inline-block;}
 .head>div:nth-child(1){text-align: left;}
@@ -30,22 +33,34 @@ strong{font-weight:400}
 h2{font-size: 44px; font-weight:800;}
 h3{font-size: 44px;font-weight: 800;}
 
-.top{background:#f4f4f4;position: relative;}
-.top .top_txt{width: 90%;}
-.top .top_img_wrap{width: 10%;height:120px;position: absolute;top: 0;right: 0;margin:2%;text-align: right;}
+.top{background:#f4f4f4;position: relative;display: flex;justify-content: space-between}
+.top .top_txt{width: 60%;}
+.top .top_img_wrap{width: 10%;height:120px;}
 .top .top_img{
     background: red;
     height: 120px;width: 120px;top: 0;right: 0;display: inline-block;
-    border-radius: 60px;
+    border-radius: 60px;float: right;
 }
 
-.slot{font-size: 0;}
-.slot li{width: 49%;overflow: hidden;font-size: 16px;display: inline-block;}
-.slot li img{width: 100%;}
-.slot li:nth-child(2n){padding-left: 2%;}
-.slot .title{display: block;font-size: 24px;font-weight: 800;padding-top: 16px;padding-bottom: 8px;}
+.slot1{font-size: 0;}
+.slot1 li{width: 49%;overflow: hidden;font-size: 16px;display: inline-block;}
+.slot1 li img{width: 100%;}
+.slot1 .title{display: block;font-size: 24px;font-weight: 800;padding-top: 16px;padding-bottom: 8px;}
+
+.slot2{margin-bottom: 1%;}
+.slot2 li{color: #fff;opacity: .2;}
+.slot2 li{width: 25%;font-size: 16px;text-align: center;}
+.slot2 li.on{opacity: 1;}
+.slot2 li:hover{opacity: .4;}
+.slot2 li a{width: 100%;border-bottom: 2px solid #fff;display: inline-block;padding: 24px 0;}
+.slot2 li a:hover{text-decoration: none;}
+
+.slot3{font-size: 0;display: flex;flex-wrap: wrap;justify-content: space-between;}
+.slot3 li{width: 120px;height: 120px;background-color: #235BED;margin-bottom: 1%;}
 
 
-.slot2{font-size: 0;}
-.slot2 li{background-color: tomato;}
-.slot2 li{width: 50%;overflow: hidden;font-size: 16px;display: inline-block;}
+.foot ul{display: flex;color: #fff;}
+.foot ul li{width:50%;height: 200px;}
+.foot ul li a{display: inline-block;width: 100%;height: 100%;}
+.foot ul li:nth-child(1){background:#383838 ;}
+.foot ul li:nth-child(2){background:#235BED ;}
